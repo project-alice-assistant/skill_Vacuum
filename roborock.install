@@ -1,0 +1,23 @@
+{
+    "name": "Roborock",
+    "version": "0.0.1",
+    "icon": "fab fa-battle-net",
+    "category": "undefined",
+    "author": "philipp2310",
+    "maintainers": [],
+    "desc": "Control your roborock vacuum",
+    "aliceMinVersion": "1.0.0-b1",
+    "systemRequirements": [
+        ""
+    ],
+    "pipRequirements": [
+        "python-miio"
+    ],
+    "conditions": {
+        "lang": [
+            "en",
+            "de"
+        ],
+        "asrArbitraryCapture": true
+    }
+}

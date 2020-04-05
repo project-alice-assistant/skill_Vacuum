@@ -1,0 +1,7 @@
+{
+    "skill": "Roborock",
+    "icon": "time",
+    "description": "Control your roborock vacuum",
+    "slotTypes": [],
+    "intents": []
+}
