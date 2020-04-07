@@ -1,7 +1,7 @@
 {
     "name": "Roborock",
     "version": "0.0.1",
-    "icon": "fab fa-battle-net",
+    "icon": "fas fa-broom",
     "category": "undefined",
     "author": "philipp2310",
     "maintainers": [],

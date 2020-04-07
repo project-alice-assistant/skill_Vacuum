@@ -1,7 +1,65 @@
 {
     "skill": "Roborock",
     "icon": "time",
-    "description": "Control your roborock vacuum",
+    "description": "Steuere deinen Roborock Staubsauger",
     "slotTypes": [],
-    "intents": []
+    "intents": [
+        {
+            "name": "locateVac",
+            "description":"Finde deinen Staubsauger",
+            "enabledByDefault": true,
+            "utterances": [
+                "Wo ist der Staubsauger",
+                "Wo ist mein Roborock",
+                "wo finde ich meinen Staubsauger",
+                "Suche den Staubsauger",
+                "Finde meinen Staubsauger",
+                "Kannst du meinen Roborock suchen",
+                "Kannst du bitte den Roborock suchen",
+                "kannst du den Roborock bitte suchen",
+                "Kannst du für mich den Staubsauger suchen",
+                "Kannst du bitte für mich den Staubsauger suchen",
+                "suchst du bitte für mich den Staubsauger",
+                "suchst du für mich bitte den Roborock",
+                "ich kann den Staubsauger nicht finden",
+                "ich finde den Staubsauger nicht",
+                "bitte suche den Staubsaugger für mich",
+                "bitte suche den Roborock für mich"
+            ]
+        },{
+            "name": "returnHomeVac",
+            "description":"Fahre den Staubsauger zurück ins Dock",
+            "enabledByDefault": true,
+            "utterances": [
+                "Lade den Staubsauger auf",
+                "Schicke den Staubsauger zum Dock",
+                "Fahre den Staubsauger auf die Station",
+                "Bitte bringe den Staubsauger zurück in die Ladestation",
+                "Kannst du bitte den Staubsauger zum Dock fahren",
+                "Fahre den Roborock zurück in die Station",
+                "Bitte fahre den Roborock aufs Dock",
+                "Fahre doch bitte den Roborock ",
+                "Schicke den Staubsauger zum aufladen",
+                "Fahre den Staubsauger zurück zur Station",
+                "Fahre bitte den Roborock zur Station",
+                "Kannst du bitte den Roborock zur Station fahren"
+            ]
+        },{
+            "name": "cleanVac",
+            "description":"Starte die Reinigung mit dem Staubsauger",
+            "enabledByDefault": true,
+            "utterances": [
+                "Sauge in der {Küche:=>Room}"
+            ],
+			"slots": [
+				{
+					"name": "Room",
+					"description": "Raum in dem gesaugt werden soll",
+					"required": false,
+					"type": "Alice/Room",
+					"missingQuestion": ""
+				}
+            ]
+        }
+    ]
 }

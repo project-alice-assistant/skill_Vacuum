@@ -1,7 +1,14 @@
 {
     "skill": "Roborock",
     "icon": "time",
-    "description": "Control your roborock vacuum",
+    "description": "Control your Roborock vacuum",
     "slotTypes": [],
-    "intents": []
+    "intents": [
+        {
+            "name": "locateVac",
+            "description":"Find your vacuum",
+            "enabledByDefault": true,
+            "utterances": ["Where is my vacuum"]
+        }
+    ]
 }
