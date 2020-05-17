@@ -49,6 +49,21 @@
             "description":"Starte die Reinigung mit dem Staubsauger",
             "enabledByDefault": true,
             "utterances": [
+                "Starte den Staubsauger",
+                "Starte bitte den Staubsauger",
+                "Starte den Staubsauger bitte",
+                "bitte Starte den Staubsauger",
+                "Starte die Reinigung",
+                "Reinige die Wohnung",
+                "Reinige den {Gang:=>Room}",
+                "Sauge die Wohnung",
+                "Putze die Wohnung",
+                "Im {Wohnzimmer:=>Room} muss gesaugt werden",
+                "kannst du bitte im {Schlafzimmer:=>} saugen",
+                "kannst du in der {Küche:=>Room} saugen",
+                "kannst du bitte im {Schlafzimmer:=>} putzen",
+                "kannst du in der {Küche:=>Room} putzen",
+                "Sauge {überall:=>Room}",
                 "Sauge in der {Küche:=>Room}"
             ],
 			"slots": [

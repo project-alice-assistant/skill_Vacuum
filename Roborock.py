@@ -29,7 +29,7 @@ class Roborock(AliceSkill):
 	def returnHomeVac(self, session: DialogSession, **_kwargs):
 		vac = self.getVac()
 		try:
-			vac.home()
+			vac.send("app_charge")
 		except Exception as e:
 			self.logError(e)
 			self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
@@ -37,9 +37,22 @@ class Roborock(AliceSkill):
 
 	@IntentHandler('cleanVac')
 	def cleanVac(self, session: DialogSession, **_kwargs):
+		self.logInfo("was asked to clean from " + session.siteId)
 		vac = self.getVac(session.siteId)
 		try:
-			vac.home()
+			items = [self.getIdForRoom(x.value['value']) for x in session.slotsAsObjects.get('Room', list())]
+			if items:
+				vac.segment_clean(s(items))
+			else:
+				self.logInfo("clean everything")
+				vac.start()
 		except Exception as e:
 			self.logError(e)
 			self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
+
+
+	def getIdForRooms(self, room: string) -> int:
+		self.logInfo("Clean room: " +room)
+		if room == "Arbeitszimmer":
+			return 1
+		return 2
