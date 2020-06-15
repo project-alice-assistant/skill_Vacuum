@@ -59,9 +59,9 @@
                 "Sauge die Wohnung",
                 "Putze die Wohnung",
                 "Im {Wohnzimmer:=>Room} muss gesaugt werden",
-                "kannst du bitte im {Schlafzimmer:=>} saugen",
+                "kannst du bitte im {Schlafzimmer:=>Room} saugen",
                 "kannst du in der {Küche:=>Room} saugen",
-                "kannst du bitte im {Schlafzimmer:=>} putzen",
+                "kannst du bitte im {Schlafzimmer:=>Room} putzen",
                 "kannst du in der {Küche:=>Room} putzen",
                 "Sauge {überall:=>Room}",
                 "Sauge in der {Küche:=>Room}"
