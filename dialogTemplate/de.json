@@ -55,23 +55,23 @@
                 "bitte Starte den Staubsauger",
                 "Starte die Reinigung",
                 "Reinige die Wohnung",
-                "Reinige den {Gang:=>Room}",
+                "Reinige den {Gang:=>Location}",
                 "Sauge die Wohnung",
                 "Putze die Wohnung",
-                "Im {Wohnzimmer:=>Room} muss gesaugt werden",
-                "kannst du bitte im {Schlafzimmer:=>Room} saugen",
-                "kannst du in der {Küche:=>Room} saugen",
-                "kannst du bitte im {Schlafzimmer:=>Room} putzen",
-                "kannst du in der {Küche:=>Room} putzen",
-                "Sauge {überall:=>Room}",
-                "Sauge in der {Küche:=>Room}"
+                "Im {Wohnzimmer:=>Location} muss gesaugt werden",
+                "kannst du bitte im {Schlafzimmer:=>Location} saugen",
+                "kannst du in der {Küche:=>Location} saugen",
+                "kannst du bitte im {Schlafzimmer:=>Location} putzen",
+                "kannst du in der {Küche:=>Location} putzen",
+                "Sauge {überall:=>Location}",
+                "Sauge in der {Küche:=>Location}"
             ],
 			"slots": [
 				{
-					"name": "Room",
+					"name": "Location",
 					"description": "Raum in dem gesaugt werden soll",
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
             ]

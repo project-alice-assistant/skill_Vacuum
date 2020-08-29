@@ -6,7 +6,7 @@
     "author": "philipp2310",
     "maintainers": [],
     "desc": "Control your roborock vacuum",
-    "aliceMinVersion": "1.0.0-b1",
+    "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [
         ""
     ],
