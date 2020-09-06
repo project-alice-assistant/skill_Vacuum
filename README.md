@@ -6,7 +6,7 @@ Control your roborock vacuum
 
 - Author: philipp2310
 - Maintainers: 
-- Alice minimum Version: 1.0.0-b1
+- Alice minimum Version: 1.0.0-b3
 - Languages:
     en
     de
