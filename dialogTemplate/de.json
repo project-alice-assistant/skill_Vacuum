@@ -64,7 +64,18 @@
                 "kannst du bitte im {Schlafzimmer:=>Location} putzen",
                 "kannst du in der {Küche:=>Location} putzen",
                 "Sauge {überall:=>Location}",
-                "Sauge in der {Küche:=>Location}"
+                "Sauge im {Wohnzimmer:=>Location}",
+                "Sauge in der {Küche:=>Location}",
+                "Staubsauge im {Wohnzimmer:=>Location}",
+                "Staubsauge in der {Wohnzimmer:=>Location}",
+                "Staubsauge in der {Wohnzimmer:=>Location} und im {Wohnzimmer:=>Location}",
+                "Staubsauge {Wohnzimmer:=>Location} {Wohnzimmer:=>Location} und {Wohnzimmer:=>Location}",
+                "Staubsauge im {Wohnzimmer:=>Location} und im {Wohnzimmer:=>Location}",
+                "Putze im {Wohnzimmer:=>Location}",
+                "Putze in der {Wohnzimmer:=>Location}",
+                "Putze in der {Wohnzimmer:=>Location} und im {Wohnzimmer:=>Location}",
+                "Putze {Wohnzimmer:=>Location} {Wohnzimmer:=>Location} und {Wohnzimmer:=>Location}",
+                "Putze im {Wohnzimmer:=>Location} und im {Wohnzimmer:=>Location}"
             ],
 			"slots": [
 				{
