@@ -1,1 +1,18 @@
-{}
+{
+	"oneOfUs": {
+		"default": [
+			"One of us."
+		],
+		"short": [
+			"One of us."
+		]
+	},
+	"communicationError": {
+		"default": [
+			"Sorry, an error occured."
+		],
+		"short": [
+			"Error."
+		]
+	}
+}

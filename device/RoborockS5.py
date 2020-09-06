@@ -16,8 +16,7 @@ from typing import List
 class RoborockS5(DeviceType):
 
 	DEV_SETTINGS = { 'ip': '',
-					 'token': '',
-					 'enableQueue': 'X'}
+					 'token': ''}
 	LOC_SETTINGS = { 'roomId': '' }
 
 	def __init__(self, data: sqlite3.Row):

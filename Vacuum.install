@@ -1,11 +1,11 @@
 {
-    "name": "Roborock",
-    "version": "0.0.1",
+    "name": "Vacuum",
+    "version": "1.0.0",
     "icon": "fas fa-broom",
     "category": "undefined",
     "author": "philipp2310",
     "maintainers": [],
-    "desc": "Control your roborock vacuum",
+    "desc": "Control your vacuum",
     "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [
         ""

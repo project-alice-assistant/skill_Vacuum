@@ -1,7 +1,6 @@
 {
-    "skill": "Roborock",
-    "icon": "time",
-    "description": "Steuere deinen Roborock Staubsauger",
+    "skill": "Vacuum",
+    "description": "Steuere deinen Staubsauger",
     "slotTypes": [],
     "intents": [
         {
@@ -66,6 +65,12 @@
                 "Sauge {überall:=>Location}",
                 "Sauge im {Wohnzimmer:=>Location}",
                 "Sauge in der {Küche:=>Location}",
+                "schicke den Staubsauger in die {Wohnzimmer:=>Location}",
+                "schicke den Staubsauger in das {Wohnzimmer:=>Location}",
+                "schicke den Staubsauger in der {Wohnzimmer:=>Location}",
+                "Staubsauger in die {Wohnzimmer:=>Location}",
+                "Staubsauger in das {Wohnzimmer:=>Location}",
+                "Staubsauger in der {Wohnzimmer:=>Location}",
                 "Staubsauge im {Wohnzimmer:=>Location}",
                 "Staubsauge in der {Wohnzimmer:=>Location}",
                 "Staubsauge in der {Wohnzimmer:=>Location} und im {Wohnzimmer:=>Location}",

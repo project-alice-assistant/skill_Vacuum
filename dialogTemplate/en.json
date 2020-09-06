@@ -1,14 +1,82 @@
 {
-    "skill": "Roborock",
-    "icon": "time",
-    "description": "Control your Roborock vacuum",
+    "skill": "Vacuum",
+    "description": "Control your vacuum",
     "slotTypes": [],
     "intents": [
         {
             "name": "locateVac",
             "description":"Find your vacuum",
             "enabledByDefault": true,
-            "utterances": ["Where is my vacuum"]
+            "utterances": [
+                "Where is the vacuum",
+                "where is my vacuum",
+                "where is the roborock",
+                "find my vacuum",
+                "find my roborock",
+                "find the vacuum",
+                "can you locate the vacuum",
+                "please locate my roborock",
+                "where can i find my vacuum",
+                "search for my vacuum",
+                "vacuum where are you?"
+            ]
+        },{
+            "name": "returnHomeVac",
+            "description":"Return the vacuum back to the dock",
+            "enabledByDefault": true,
+            "utterances": [
+                "return the vacuum back to the dock",
+                "return the vacuum",
+                "send the vacuum home",
+                "recharge the vacuum",
+                "recharge my vacuum",
+                "return the vacuum to its base",
+                "return the vacuum to the base",
+                "drive the vacuum back",
+                "drive the vacuum back to its station",
+                "return the vacuum to the station",
+                "send the vacuum to recharge",
+                "order the vacuum to recharge",
+                "please recharge the vacuum"
+            ]
+        },{
+            "name": "cleanVac",
+            "description":"Start cleaning with the vacuum",
+            "enabledByDefault": true,
+            "utterances": [
+                "Clean the {living room:=>Location}",
+                "vacuum the {living room:=>Location}",
+                "clean up the {living room:=>Location}",
+                "can you clean the {living room:=>Location}",
+                "can you please clean the {living room:=>Location}",
+                "can you clean in the {living room:=>Location}",
+                "can you please vacuum the {living room:=>Location}",
+                "send the vacuum into the {living room:=>Location}",
+                "clean up in my {living room:=>Location}",
+                "vacuum in the {living room:=>Location} and the {living room:=>Location}",
+                "vacuum the {living room:=>Location} {living room:=>Location} and {living room:=>Location}",
+                "vacuum the house",
+                "vacuum everywhere",
+                "can you clean the whole house",
+                "please clean the house",
+                "clean the house",
+                "vacuum everything",
+                "send out the vacuum",
+                "send out the cleaning crew",
+                "clean my house",
+                "clean everything",
+                "clean the flat",
+                "clean my flat"
+            ],
+			"slots": [
+				{
+					"name": "Location",
+					"description": "room to clean",
+					"required": false,
+					"type": "Alice/Location",
+					"missingQuestion": ""
+				}
+            ]
         }
     ]
 }

@@ -8,12 +8,14 @@ from miio import Vacuum
 from core.device.model.DeviceException import DeviceNotPaired
 
 
-class Roborock(AliceSkill):
+class Vacuum(AliceSkill):
 	"""
 	Author: philipp2310
 	Description: Control your vacuum
 	"""
 	##todo have different deviceType abilities, e.g. wet/dry clean
+	##todo distinct between "clean here" and "clean everywhere"
+	##todo allow deviceNames for cleaning
 
 
 	@IntentHandler('locateVac')
@@ -27,7 +29,7 @@ class Roborock(AliceSkill):
 				device.getDeviceType().locate(device=device)
 		except Exception as e:
 			self.logError(e)
-			self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
+			self.endDialog(session.sessionId, text=self.randomTalk('oneOfUs'))
 
 
 	@IntentHandler('returnHomeVac')
@@ -46,7 +48,7 @@ class Roborock(AliceSkill):
 
 	@IntentHandler('cleanVac')
 	def cleanVac(self, session: DialogSession, **_kwargs):
-		links = self.DeviceManager.getDeviceLinksForSession(session=session, skill=self.name)
+		links = self.DeviceManager.getDeviceLinksForSession(session=session, skill=self.name, noneIsEverywhere=True)
 		devGrouped = self.DeviceManager.groupDeviceLinksByDevice(links)
 		# loop devices and call action per links
 		for devId,linksList in devGrouped.items():
