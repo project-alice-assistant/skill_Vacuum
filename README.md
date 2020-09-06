@@ -10,4 +10,3 @@ Control your roborock vacuum
 - Languages:
     en
     de
-
