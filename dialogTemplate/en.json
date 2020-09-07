@@ -1,6 +1,7 @@
 {
     "skill": "Vacuum",
     "description": "Control your vacuum",
+    "icon": "none",
     "slotTypes": [],
     "intents": [
         {
