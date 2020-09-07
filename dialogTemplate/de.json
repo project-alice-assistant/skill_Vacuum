@@ -1,7 +1,7 @@
 {
     "skill": "Vacuum",
     "description": "Steuere deinen Staubsauger",
-    "icon": "none",
+	"icon": "film",
     "slotTypes": [],
     "intents": [
         {
