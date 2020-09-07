@@ -1,11 +1,10 @@
 from core.base.model.AliceSkill import AliceSkill
+from core.device.model.Device import Device
+from core.device.model.DeviceException import DeviceNotPaired
+from core.device.model.DeviceType import DeviceType
+from core.device.model.Location import Location
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
-from core.device.model.Device import Device
-from core.device.model.Location import Location
-from core.device.model.DeviceType import DeviceType
-from miio import Vacuum
-from core.device.model.DeviceException import DeviceNotPaired
 
 
 class Vacuum(AliceSkill):
@@ -13,6 +12,8 @@ class Vacuum(AliceSkill):
 	Author: philipp2310
 	Description: Control your vacuum
 	"""
+
+
 	##todo have different deviceType abilities, e.g. wet/dry clean
 	##todo distinct between "clean here" and "clean everywhere"
 	##todo allow deviceNames for cleaning
@@ -51,7 +52,7 @@ class Vacuum(AliceSkill):
 		links = self.DeviceManager.getDeviceLinksForSession(session=session, skill=self.name, noneIsEverywhere=True)
 		devGrouped = self.DeviceManager.groupDeviceLinksByDevice(links)
 		# loop devices and call action per links
-		for devId,linksList in devGrouped.items():
+		for devId, linksList in devGrouped.items():
 
 			# all vac DeviceTypes must implement a "clean" function
 			try:
@@ -60,4 +61,3 @@ class Vacuum(AliceSkill):
 			except Exception as e:
 				self.logError(e)
 				self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
-
