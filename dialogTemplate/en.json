@@ -1,7 +1,5 @@
 {
     "skill": "Vacuum",
-    "description": "Control your vacuum",
-	"icon": "film",
     "slotTypes": [],
     "intents": [
         {
@@ -72,7 +70,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": "room to clean",
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""

@@ -1,7 +1,5 @@
 {
     "skill": "Vacuum",
-    "description": "Steuere deinen Staubsauger",
-	"icon": "film",
     "slotTypes": [],
     "intents": [
         {
@@ -86,7 +84,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": "Raum in dem gesaugt werden soll",
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
