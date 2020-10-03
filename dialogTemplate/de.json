@@ -4,7 +4,6 @@
     "intents": [
         {
             "name": "locateVac",
-            "description":"Finde deinen Staubsauger",
             "enabledByDefault": true,
             "utterances": [
                 "Wo ist der Staubsauger",
@@ -26,7 +25,6 @@
             ]
         },{
             "name": "returnHomeVac",
-            "description":"Fahre den Staubsauger zurück ins Dock",
             "enabledByDefault": true,
             "utterances": [
                 "Lade den Staubsauger auf",
@@ -44,7 +42,6 @@
             ]
         },{
             "name": "cleanVac",
-            "description":"Starte die Reinigung mit dem Staubsauger",
             "enabledByDefault": true,
             "utterances": [
                 "Starte den Staubsauger",
