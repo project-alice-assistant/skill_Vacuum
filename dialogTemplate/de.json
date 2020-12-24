@@ -1,12 +1,9 @@
 {
     "skill": "Vacuum",
-    "description": "Steuere deinen Staubsauger",
-	"icon": "film",
     "slotTypes": [],
     "intents": [
         {
             "name": "locateVac",
-            "description":"Finde deinen Staubsauger",
             "enabledByDefault": true,
             "utterances": [
                 "Wo ist der Staubsauger",
@@ -28,7 +25,6 @@
             ]
         },{
             "name": "returnHomeVac",
-            "description":"Fahre den Staubsauger zurück ins Dock",
             "enabledByDefault": true,
             "utterances": [
                 "Lade den Staubsauger auf",
@@ -46,7 +42,6 @@
             ]
         },{
             "name": "cleanVac",
-            "description":"Starte die Reinigung mit dem Staubsauger",
             "enabledByDefault": true,
             "utterances": [
                 "Starte den Staubsauger",
@@ -86,7 +81,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": "Raum in dem gesaugt werden soll",
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""

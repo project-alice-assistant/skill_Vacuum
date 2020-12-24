@@ -1,12 +1,9 @@
 {
     "skill": "Vacuum",
-    "description": "Control your vacuum",
-	"icon": "film",
     "slotTypes": [],
     "intents": [
         {
             "name": "locateVac",
-            "description":"Find your vacuum",
             "enabledByDefault": true,
             "utterances": [
                 "Where is the vacuum",
@@ -23,7 +20,6 @@
             ]
         },{
             "name": "returnHomeVac",
-            "description":"Return the vacuum back to the dock",
             "enabledByDefault": true,
             "utterances": [
                 "return the vacuum back to the dock",
@@ -42,7 +38,6 @@
             ]
         },{
             "name": "cleanVac",
-            "description":"Start cleaning with the vacuum",
             "enabledByDefault": true,
             "utterances": [
                 "Clean the {living room:=>Location}",
@@ -72,7 +67,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": "room to clean",
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
