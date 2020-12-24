@@ -2,7 +2,7 @@ from core.base.model.AliceSkill import AliceSkill
 from core.device.model.Device import Device
 from core.device.model.DeviceException import DeviceNotPaired
 from core.device.model.DeviceType import DeviceType
-from core.device.model.Location import Location
+from core.myHome.model.Location import Location
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
 

@@ -1,5 +1,5 @@
 from core.device.model.Device import Device
-from core.device.model.Location import Location
+from core.myHome.model.Location import Location
 from core.device.model.DeviceType import DeviceType
 from core.device.model.DeviceLink import DeviceLink
 from core.commons import constants
