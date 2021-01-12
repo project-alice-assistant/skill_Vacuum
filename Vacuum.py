@@ -5,6 +5,7 @@ from core.device.model.DeviceType import DeviceType
 from core.myHome.model.Location import Location
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
+from core.device.model.DeviceAbility import DeviceAbility
 
 
 class Vacuum(AliceSkill):
@@ -13,10 +14,25 @@ class Vacuum(AliceSkill):
 	Description: Control your vacuum
 	"""
 
+	DEVICES = {
+		'RoborockS5': {
+			'deviceTypeName'    : 'RoborockS5',
+			'perLocationLimit'  : 0,
+			'totalDeviceLimit'  : 0,
+			'allowLocationLinks': True,
+			'heartbeatRate'     : 0,
+			'deviceSettings'    : { 'ip': '',
+					                'token': ''},
+			'abilities'         : [DeviceAbility.NONE]
+		}
+	}
+
 
 	##todo have different deviceType abilities, e.g. wet/dry clean
 	##todo distinct between "clean here" and "clean everywhere"
-	##todo allow deviceNames for cleaning
+	##todo allow friendly deviceNames for cleaning, "send robo to the kitchen" or "let rob clean the bathroom"
+	def __init__(self):
+		super().__init__(devices=self.DEVICES)
 
 
 	@IntentHandler('locateVac')

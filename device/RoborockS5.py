@@ -10,17 +10,15 @@ from core.base.model.ProjectAliceObject import ProjectAliceObject
 from core.dialog.model.DialogSession import DialogSession
 from core.device.model.DeviceException import RequiresGuiSettings
 from miio import Vacuum
-from typing import List
+from typing import List, Union, Dict
 
 
 class RoborockS5(DeviceType):
 
-	DEV_SETTINGS = { 'ip': '',
-					 'token': ''}
 	LOC_SETTINGS = { 'roomId': '' }
 
-	def __init__(self, data: sqlite3.Row):
-		super().__init__(data, devSettings=self.DEV_SETTINGS, locSettings=self.LOC_SETTINGS, heartbeatRate=0)
+	def __init__(self, data: Union[sqlite3.Row, Dict]):
+		super().__init__(data)
 
 
 	def discover(self, device: Device, uid: str, replyOnSiteId: str = "", session:DialogSession = None) -> bool:
