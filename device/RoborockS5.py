@@ -13,7 +13,7 @@ from miio import Vacuum
 from typing import List, Union, Dict
 
 
-class RoborockS5(DeviceType):
+class RoborockS5(Device):
 
 	LOC_SETTINGS = { 'roomId': '' }
 
@@ -71,7 +71,7 @@ class RoborockS5(DeviceType):
 		return Vacuum(device.devSettings['ip'], device.devSettings['token'])
 
 
-	def getDeviceIcon(self, device: Device) -> str:
+	def getDeviceIcon(self) -> str:
 		#todo figure out a concept getting the current state of the vac
 		return 'RoborockS5.png'
 
