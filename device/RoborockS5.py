@@ -71,10 +71,5 @@ class RoborockS5(Device):
 		return Vacuum(device.devSettings['ip'], device.devSettings['token'])
 
 
-	def getDeviceIcon(self) -> str:
-		#todo figure out a concept getting the current state of the vac
-		return 'RoborockS5.png'
-
-
 	def toggle(self, device: Device):
 		self.getVac(device=device).find()
