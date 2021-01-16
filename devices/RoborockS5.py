@@ -15,7 +15,20 @@ from typing import List, Union, Dict
 
 class RoborockS5(Device):
 
-	LOC_SETTINGS = { 'roomId': '' }
+	@classmethod
+	def getDeviceTypeDefinition(cls) -> dict:
+		return {
+			'deviceTypeName'    : 'RoborockS5',
+			'perLocationLimit'  : 0,
+			'totalDeviceLimit'  : 0,
+			'allowLocationLinks': True,
+			'allowHeartbeatOverride': False,
+			'heartbeatRate'     : 0,
+			'deviceSettings'    : { 'ip': '',
+					                'token': ''},
+			'linkSettings'      : { 'roomId': '' },
+			'abilities'         : [DeviceAbility.NONE]
+		}
 
 	def __init__(self, data: Union[sqlite3.Row, Dict]):
 		super().__init__(data)
