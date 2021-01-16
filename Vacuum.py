@@ -5,7 +5,6 @@ from core.device.model.DeviceType import DeviceType
 from core.myHome.model.Location import Location
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
-from core.device.model.DeviceAbility import DeviceAbility
 
 
 class Vacuum(AliceSkill):

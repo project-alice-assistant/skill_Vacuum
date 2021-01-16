@@ -1,16 +1,17 @@
-from core.device.model.Device import Device
-from core.myHome.model.Location import Location
-from core.device.model.DeviceType import DeviceType
-from core.device.model.DeviceLink import DeviceLink
-from core.commons import constants
+import socket
 import sqlite3
 import threading
-import socket
 from core.base.model.ProjectAliceObject import ProjectAliceObject
-from core.dialog.model.DialogSession import DialogSession
+from core.commons import constants
+from core.device.model.Device import Device
+from core.device.model.DeviceAbility import DeviceAbility
 from core.device.model.DeviceException import RequiresGuiSettings
+from core.device.model.DeviceLink import DeviceLink
+from core.device.model.DeviceType import DeviceType
+from core.dialog.model.DialogSession import DialogSession
+from core.myHome.model.Location import Location
 from miio import Vacuum
-from typing import List, Union, Dict
+from typing import Dict, List, Union
 
 
 class RoborockS5(Device):
