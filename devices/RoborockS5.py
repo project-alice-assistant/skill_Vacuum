@@ -25,9 +25,6 @@ class RoborockS5(Device):
 			'allowLocationLinks': True,
 			'allowHeartbeatOverride': False,
 			'heartbeatRate'     : 0,
-			'deviceSettings'    : { 'ip': '',
-					                'token': ''},
-			'linkSettings'      : { 'roomId': '' },
 			'abilities'         : [DeviceAbility.NONE]
 		}
 
@@ -37,10 +34,8 @@ class RoborockS5(Device):
 
 	def discover(self, device: Device, uid: str, replyOnSiteId: str = "", session:DialogSession = None) -> bool:
 		self.logInfo(f'searching for a roborock')
-		if not 'ip' in device.devSettings or not 'token' in device.devSettings:
-			device.changedDevSettingsStructure(self.DEV_SETTINGS)
-		ip = device.devSettings['ip']
-		token = device.devSettings['token']
+		ip = device.getConfig('ip')
+		token = device.getConfig('token')
 
 		# check device settings for ip and token -> end dialog: Please supply informaition via interface
 		if not ip or not token:
@@ -60,9 +55,9 @@ class RoborockS5(Device):
 		if not isinstance(links, List): links = [links]
 
 		vac = self.getVac(device=device)
-		roomIds = [int(l.locSettings['roomId']) for l in links]
+		roomIds = [int(l.getConfig('roomId')) for l in links]
 
-		if device.devSettings['enableQueue'] == "X":
+		if device.getConfig('enableQueue') == "X":
 			#todo get device Status - if cleaning, add to buffer and return to prevent overwrite!
 			pass
 
@@ -82,7 +77,7 @@ class RoborockS5(Device):
 
 	def getVac(self, device:Device) -> Vacuum:
 		# token has to be taken from emulator, backup or similar
-		return Vacuum(device.devSettings['ip'], device.devSettings['token'])
+		return Vacuum(device.getConfig('ip'), device.getConfig('token'))
 
 
 	def toggle(self, device: Device):

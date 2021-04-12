@@ -1,0 +1,24 @@
+{
+	"deviceConfigs": {
+		"ip": {
+			"defaultValue": "",
+			"dataType"    : "string",
+			"isSensitive" : false,
+			"description" : "The IP of your roborock Vacuum"
+		},
+		"token": {
+			"defaultValue": "",
+			"dataType"    : "string",
+			"isSensitive" : true,
+			"description" : "The secret token of your roborock"
+		}
+	},
+	"linksConfigs": {
+		"roomId":{
+			"defaultValue": 0,
+			"dataType"    : "number",
+			"isSensitive" : false,
+			"description" : "The roborock internal ID of that room"
+		}
+	}
+}
