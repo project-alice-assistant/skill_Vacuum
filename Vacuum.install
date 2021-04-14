@@ -1,6 +1,6 @@
 {
     "name"              : "Vacuum",
-    "version"           : "1.0.12",
+    "version"           : "1.0.13",
     "icon"              : "fas fa-broom",
     "category"          : "undefined",
     "author"            : "philipp2310",

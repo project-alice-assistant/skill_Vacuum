@@ -15,6 +15,15 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>
 #
+#  Last modified: 2021.04.15 at 01:11:28 MESZ
+
+#  Copyright (c) 2021
+#
+#  This file, RoborockS5.py, is part of Project Alice.
+#
+#
+#
+#
 #  Last modified: 2021.04.15 at 00:35:02 MESZ
 
 import socket
@@ -67,7 +76,7 @@ class RoborockS5(Device):
 		vac.find()
 		# connected?
 		self.pairingDone(uid=serial)
-		return True
+		return OnDeviceClickReaction(action=DeviceClickReactionAction.NONE.value).toDict()
 
 
 	# required by every vacuum
@@ -78,7 +87,7 @@ class RoborockS5(Device):
 		vac = self.getVac()
 		roomIds = [int(l.getConfig('roomId')) for l in links]
 
-		if device.getConfig('enableQueue') == "X":
+		if self.getConfig('enableQueue') == "X":
 			# todo get device Status - if cleaning, add to buffer and return to prevent overwrite!
 			pass
 
