@@ -1,3 +1,22 @@
+#  Copyright (c) 2021
+#
+#  This file, RoborockS5.py, is part of Project Alice.
+#
+#  Project Alice is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>
+#
+#  Last modified: 2021.04.15 at 00:35:02 MESZ
+
 import socket
 import sqlite3
 import threading
@@ -19,66 +38,69 @@ class RoborockS5(Device):
 	@classmethod
 	def getDeviceTypeDefinition(cls) -> dict:
 		return {
-			'deviceTypeName'    : 'RoborockS5',
-			'perLocationLimit'  : 0,
-			'totalDeviceLimit'  : 0,
-			'allowLocationLinks': True,
+			'deviceTypeName'        : 'RoborockS5',
+			'perLocationLimit'      : 0,
+			'totalDeviceLimit'      : 0,
+			'allowLocationLinks'    : True,
 			'allowHeartbeatOverride': False,
-			'heartbeatRate'     : 0,
-			'abilities'         : [DeviceAbility.NONE]
+			'heartbeatRate'         : 0,
+			'abilities'             : [DeviceAbility.NONE]
 		}
+
 
 	def __init__(self, data: Union[sqlite3.Row, Dict]):
 		super().__init__(data)
 
 
-	def discover(self, device: Device, uid: str, replyOnSiteId: str = "", session:DialogSession = None) -> bool:
+	def onUIClick(self) -> dict:
 		self.logInfo(f'searching for a roborock')
-		ip = device.getConfig('ip')
-		token = device.getConfig('token')
+		ip = self.getConfig('ip')
+		token = self.getConfig('token')
 
 		# check device settings for ip and token -> end dialog: Please supply informaition via interface
 		if not ip or not token:
 			raise RequiresGuiSettings()
 
 		# check settings by sending a command(Hello?)
-		vac = self.getVac(device=device)
+		vac = self.getVac()
 		serial = vac.serial_number()
 		vac.find()
 		# connected?
-		device.pairingDone(uid=serial)
+		self.pairingDone(uid=serial)
 		return True
 
 
-	#required by every vacuum
-	def clean(self, device: Device, links: List[DeviceLink]):
-		if not isinstance(links, List): links = [links]
+	# required by every vacuum
+	def clean(self, links: List[DeviceLink]):
+		if not isinstance(links, List):
+			links = [links]
 
-		vac = self.getVac(device=device)
+		vac = self.getVac()
 		roomIds = [int(l.getConfig('roomId')) for l in links]
 
 		if device.getConfig('enableQueue') == "X":
-			#todo get device Status - if cleaning, add to buffer and return to prevent overwrite!
+			# todo get device Status - if cleaning, add to buffer and return to prevent overwrite!
 			pass
 
 		vac.segment_clean(roomIds)
 
-	#required by every vacuum
-	def charge(self, device: Device):
-		vac = self.getVac(device=device)
+
+	# required by every vacuum
+	def charge(self):
+		vac = self.getVac()
 		vac.send("app_charge")
 
 
-	#required by every vacuum
-	def locate(self, device: Device):
-		vac = self.getVac(device=device)
+	# required by every vacuum
+	def locate(self):
+		vac = self.getVac()
 		vac.find()
 
 
-	def getVac(self, device:Device) -> Vacuum:
+	def getVac(self) -> Vacuum:
 		# token has to be taken from emulator, backup or similar
-		return Vacuum(device.getConfig('ip'), device.getConfig('token'))
+		return Vacuum(self.getConfig('ip'), self.getConfig('token'))
 
 
-	def toggle(self, device: Device):
-		self.getVac(device=device).find()
+	def toggle(self):
+		self.getVac().find()
