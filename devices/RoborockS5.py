@@ -15,25 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>
 #
-#  Last modified: 2021.04.15 at 01:22:20 MESZ
-
-#  Copyright (c) 2021
-#
-#  This file, RoborockS5.py, is part of Project Alice.
-#
-#
-#
-#
-#  Last modified: 2021.04.15 at 01:11:28 MESZ
-
-#  Copyright (c) 2021
-#
-#  This file, RoborockS5.py, is part of Project Alice.
-#
-#
-#
-#
-#  Last modified: 2021.04.15 at 00:35:02 MESZ
+#  Last modified: 2021.04.15 at 01:30:27 MESZ
 
 import socket
 import sqlite3
