@@ -15,6 +15,15 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>
 #
+#  Last modified: 2021.04.15 at 01:22:20 MESZ
+
+#  Copyright (c) 2021
+#
+#  This file, RoborockS5.py, is part of Project Alice.
+#
+#
+#
+#
 #  Last modified: 2021.04.15 at 01:11:28 MESZ
 
 #  Copyright (c) 2021
@@ -38,6 +47,8 @@ from core.device.model.DeviceLink import DeviceLink
 from core.device.model.DeviceType import DeviceType
 from core.dialog.model.DialogSession import DialogSession
 from core.myHome.model.Location import Location
+from core.webui.model.DeviceClickReactionAction import DeviceClickReactionAction
+from core.webui.model.OnDeviceClickReaction import OnDeviceClickReaction
 from miio import Vacuum
 from typing import Dict, List, Union
 
