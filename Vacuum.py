@@ -57,8 +57,7 @@ class Vacuum(AliceSkill):
 
 		try:
 			for link in devGrouped.values():
-				device = link.getDevice()
-				device.charge()
+				link.device.charge()
 		except Exception as e:
 			self.logError(e)
 			self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
@@ -73,7 +72,7 @@ class Vacuum(AliceSkill):
 
 			# all vac DeviceTypes must implement a "clean" function
 			try:
-				device = self.DeviceManager.getDeviceById(_id=devId)
+				device = self.DeviceManager.getDevice(deviceId=devId)
 				device.clean(linksList)
 			except Exception as e:
 				self.logError(e)
