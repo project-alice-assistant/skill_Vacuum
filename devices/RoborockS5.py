@@ -68,6 +68,7 @@ class RoborockS5(Device):
 		serial = vac.serial_number()
 		vac.find()
 		# connected?
+		self.connected = True
 		self.pairingDone(uid=serial)
 		return OnDeviceClickReaction(action=DeviceClickReactionAction.NONE.value).toDict()
 
@@ -85,6 +86,7 @@ class RoborockS5(Device):
 			pass
 
 		vac.segment_clean(roomIds)
+		self.connected = True
 
 
 	# required by every vacuum
