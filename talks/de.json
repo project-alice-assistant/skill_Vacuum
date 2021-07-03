@@ -3,7 +3,7 @@
 		"default": [
 			"Einer von uns."
 		],
-		"short": [
+		"short"  : [
 			"Einer von uns."
 		]
 	},
@@ -11,8 +11,32 @@
 		"default": [
 			"Entschuldigung, es ist ein Fehler aufgetreten"
 		],
-		"short": [
+		"short"  : [
 			"Fehler."
+		]
+	},
+	"success": {
+		"default": [
+			"Ok, wird gemacht"
+		],
+		"short"  : [
+			"Okay."
+		]
+	},
+	"dontknowhow": {
+		"default": [
+			"Ich weiß nicht wie ich das machen soll.."
+		],
+		"short"  : [
+			"Das kann ich nicht."
+		]
+	},
+	"partiallyFailed": {
+		"default": [
+			"Leider konnte ich nur einen Teil ausführen"
+		],
+		"short"  : [
+			"Da hat nur ein Teil geklappt."
 		]
 	}
 }

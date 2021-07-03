@@ -66,7 +66,12 @@ class Vacuum(AliceSkill):
 	@IntentHandler('cleanVac')
 	def cleanVac(self, session: DialogSession, **_kwargs):
 		links = self.DeviceManager.getDeviceLinksForSession(session=session, skill=self.name, noneIsEverywhere=True)
+		self.logDebug(f'got these links to work with: {links}')
 		devGrouped = self.DeviceManager.groupDeviceLinksByDevice(links)
+		self.logDebug(f'grouped them to {devGrouped}')
+		cleaned = 0
+		failed = 0
+
 		# loop devices and call action per links
 		for devId, linksList in devGrouped.items():
 
@@ -74,6 +79,15 @@ class Vacuum(AliceSkill):
 			try:
 				device = self.DeviceManager.getDevice(deviceId=devId)
 				device.clean(linksList)
+				cleaned = cleaned + 1
 			except Exception as e:
 				self.logError(e)
 				self.endDialog(session.sessionId, text=self.randomTalk('communicationError'))
+				failed = failed + 1
+
+		if cleaned == 0 and failed == 0:
+			self.endDialog(session.sessionId, text=self.randomTalk('dontknowhow'))
+		elif failed == 0:
+			return self.endDialog(session.sessionId, text=self.randomTalk('success'))
+		else:
+			return self.endDialog(session.sessionId, text=self.randomTalk('partiallyFailed'))

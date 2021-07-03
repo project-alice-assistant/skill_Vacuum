@@ -11,8 +11,32 @@
 		"default": [
 			"Sorry, an error occured."
 		],
-		"short": [
+		"short"  : [
 			"Error."
+		]
+	},
+	"success": {
+		"default": [
+			"Ok, will do."
+		],
+		"short"  : [
+			"Okay."
+		]
+	},
+	"dontknowhow": {
+		"default": [
+			"I'm afraid I can't do that."
+		],
+		"short"  : [
+			"I don't know how."
+		]
+	},
+	"partiallyFailed": {
+		"default": [
+			"Sorry, I could only execute a part of that task."
+		],
+		"short"  : [
+			"Some parts failed."
 		]
 	}
 }
